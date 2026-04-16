@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rode Runner 🏃</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="gameWrapper" data-testid="game-wrapper">
+
+  <div id="gameTitle">🏃 RODE RUNNER &nbsp;|&nbsp; ENDLESS SPRINT</div>
+
+  <canvas id="gameCanvas"
+          data-testid="game-canvas"
+          width="900"
+          height="360"></canvas>
+
+  <!-- HUD -->
+  <div id="ui" data-testid="game-hud">
+    <div class="ui-panel" data-testid="score-panel">
+      <span>SCORE</span>
+      <div class="val" id="scoreDisplay" data-testid="score-display">0</div>
+    </div>
+    <div class="ui-panel" style="text-align:center;" data-testid="coin-panel">
+      <span>COINS</span>
+      <div class="val" id="coinDisplay" data-testid="coin-display">🪙 0</div>
+    </div>
+    <div class="ui-panel" style="text-align:right;" data-testid="best-panel">
+      <span>BEST</span>
+      <div class="val" id="bestDisplay" data-testid="best-display">0</div>
+    </div>
+  </div>
+
+  <!-- Active power-up badges -->
+  <div id="powerupDisplay" data-testid="powerup-display"></div>
+
+  <!-- Start / Game-Over overlay -->
+  <div id="overlay" data-testid="game-overlay" data-game-state="idle">
+    <h1 data-testid="game-title">RODE<br>RUNNER</h1>
+    <div class="subtitle" data-testid="game-subtitle">
+      ⚡ ENDLESS SPRINT — HOW FAR CAN YOU GO? ⚡
+    </div>
+    <div class="controls-hint">
+      <b>SPACE / ↑</b> — Jump &nbsp;|&nbsp; <b>↓ / S</b> — Duck<br>
+      <b>Double-tap SPACE</b> — Double Jump
+    </div>
+    <button id="startBtn"
+            data-testid="start-button"
+            onclick="startGame()">▶ START GAME</button>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

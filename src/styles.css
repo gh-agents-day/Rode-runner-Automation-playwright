@@ -1,0 +1,168 @@
+/* ─────────────────────────────────────────────────────────────
+   RODE RUNNER — Stylesheet
+   ───────────────────────────────────────────────────────────── */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0a0a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Wrapper ── */
+#gameWrapper {
+  position: relative;
+  width: 900px;
+}
+
+#gameTitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+/* ── Canvas ── */
+canvas {
+  display: block;
+  border-radius: 14px;
+  box-shadow:
+    0 0 60px rgba(100,200,255,0.2),
+    0 0 120px rgba(255,120,50,0.1);
+}
+
+/* ── HUD ── */
+#ui {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.ui-panel {
+  background: rgba(0,0,0,0.45);
+  border-radius: 10px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.ui-panel span {
+  font-size: 11px;
+  color: #aaa;
+  display: block;
+}
+
+.ui-panel .val {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* ── Power-up Badges ── */
+#powerupDisplay {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.pu-badge {
+  background: rgba(0,0,0,0.55);
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Overlay (Start / Game Over) ── */
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.72);
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+#overlay h1 {
+  font-size: 54px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px #ff6a00;
+}
+
+#overlay .subtitle {
+  color: #ffd700;
+  font-size: 16px;
+  margin: 6px 0 18px;
+  letter-spacing: 1px;
+}
+
+#overlay .controls-hint {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 8px;
+  line-height: 2;
+}
+
+#overlay button {
+  margin-top: 22px;
+  padding: 14px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 30px rgba(255,100,0,0.5);
+  transition: transform 0.1s;
+}
+
+#overlay button:hover {
+  transform: scale(1.06);
+}
+
+#overlay .final-score {
+  font-size: 22px;
+  color: #ffd700;
+  margin: 10px 0;
+}
+
+#overlay .highscore {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ── Lives ── */
+#livesDisplay {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.heart { font-size: 18px; }
+.heart.lost { filter: grayscale(1); opacity: 0.35; }

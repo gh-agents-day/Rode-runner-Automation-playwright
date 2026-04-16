@@ -1,0 +1,21 @@
+{
+  "name": "rode-runner-tests",
+  "version": "1.0.0",
+  "description": "Playwright automation test suite for Rode Runner",
+  "scripts": {
+    "serve":          "npx serve src -p 3000",
+    "test":           "npx playwright test",
+    "test:positive":  "npx playwright test tests/positive.spec.js",
+    "test:negative":  "npx playwright test tests/negative.spec.js",
+    "test:edge":      "npx playwright test tests/edge-cases.spec.js",
+    "test:agent":     "npx playwright test tests/agent-generated.spec.js",
+    "test:all":       "npx playwright test --reporter=html,json",
+    "test:headed":    "npx playwright test --headed",
+    "test:debug":     "npx playwright test --debug",
+    "report":         "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "serve": "^14.2.3"
+  }
+}
