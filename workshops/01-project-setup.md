@@ -31,6 +31,7 @@ npx playwright --version
 ```
 
 Expected: `Version 1.44.x` or higher.
+
 ---
 
 ## Step 01-C — Smoke Test the Setup
